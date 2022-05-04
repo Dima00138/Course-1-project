@@ -1,0 +1,114 @@
+body {
+    background-color: #001224;
+}
+
+@font-face {
+    font-family: "Oswald Regular";
+    src: url('../fonts/Oswald-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: "Kelly Slab";
+    src: url('../fonts/KellySlab-Regular.ttf');
+}
+
+body,html {
+    overflow-y: hidden;
+    height: 100%;
+}
+
+h1 {
+    font-family: "Oswald Regular";
+    z-index: 1;
+    text-align: center;
+    color: whitesmoke;
+}
+
+$count: 3;
+$height1: 600px;
+$marg1: 35%;
+$marg2: 60px;
+
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.f1 {
+    position: relative;
+    width: 60% / $count;
+    min-height: $height1;
+    //margin-top: $marg2;
+    overflow: hidden;
+    border: white solid 4px;
+    border-radius: 15px;
+    z-index: 1;
+    background-color: #001224;
+}
+
+// #f1 {
+//     float: left;
+//     margin-left: $marg1;
+// }
+
+// #f2 {
+//     float: right;
+//     margin-right: $marg1;
+// }
+
+#f1:hover, #f3:hover, #f2:hover {
+    border-color: green !important;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+#f3:hover {
+    border-color: red !important;
+}
+
+#f2:hover {
+    border-color: blue !important;
+}
+
+// #d-left:hover {
+//     transition: opacity 2s;
+//     -webkit-transition: opacity 2s;
+//     -moz-transition: opacity 2s;
+//     -ms-transition: opacity 2s;
+//     -o-transition: opacity 2s;
+//     opacity: 1;
+// }
+
+img {
+    margin: 0;
+    width: 100%;
+    height: $height1;
+}
+
+figcaption {
+    font-family: "Kelly Slab";
+    margin: 0;
+    font-size: 3em;
+    text-align: center;
+    color: whitesmoke;
+    background-color: #001224;
+}
+
+// #d-right,#d-left {
+//     margin: 0;
+//     width: 45%;
+//     height: 120%;
+// }
+
+// #d-left {
+//     float: left;
+// }
+
+// #d-right {
+//     float: right;
+// }

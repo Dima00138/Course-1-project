@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="../../src/images/logo.jpg"/>
+        <link href="../../src/styles/main.css" rel="stylesheet"/>
+        <link href="../../src/styles/axis.css" rel="stylesheet"/>
+        <link href="../../src/styles/mobile.css" rel="stylesheet" media="(max-width:480px)"/>
+        <link href="../../src/styles/tablet.css" rel="stylesheet" media="(min-width:480px) and (max-width: 1024px)"/>
+        <script src="../../src/scripts/jquery-3.6.0.min.js"></script>
+        <script src="../../src/scripts/search.js"></script>
+        <title>Блок "Ось" - Главная страница</title>
+    </head>
+<body>
+    <header>
+        <a id="logo" href="../../index.html"></a>
+        <a id="plogo" href="index.html">Блок "Ось"</a>
+        <input type="checkbox" id="menu-toggle"/>
+        <label id="label_menu" for="menu-toggle">
+            <span></span>
+        </label>
+        <nav>
+            <a href="../chainofevents.html">Цепь событий</a>
+            <a href="../archieve.html">Архив</a>
+            <a href="../media.html">Медиафайлы</a>
+            <a href="#">Случайная статья</a>
+            <form>
+            <input type="search" class="search"/>
+            <button type="button" class="btn" name="button"></button>
+            </form>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <input type="radio" name="point" id="slide1" checked>
+        <input type="radio" name="point" id="slide2">
+        <input type="radio" name="point" id="slide3">
+        <input type="radio" name="point" id="slide4">
+        <input type="radio" name="point" id="slide5">
+        <div class="slider">
+            <div class="slides slide1"></div>
+            <div class="slides slide2"></div>
+            <div class="slides slide3"></div>
+            <div class="slides slide4"></div>
+            <div class="slides slide5"></div>
+        </div>	
+        <div class="controls">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+            <label for="slide5"></label>
+        </div>
+    </div>
+    <hr/>
+    <section>
+        <article class="article-main" onclick="window.open('./article.html')"  style="background-image: url('../../src/images/article_axis-1.png');">
+            <h2 class="article-main-heading">Польская кампания вермахта (1939)</h2>
+        </article>
+        <article>
+            <a href="#" class="article-img" style=" background-image: url('../../src/images//axis1_nocensored.jpg');"></a>
+            <div class="article-time">12:27 10-12-2003</div>
+            <h2 class="article-heading"><a href="#">kfndj dkfjjdkfkjdfjk</a></h2>
+            <div class="article-author">Автор: <a href="#" class="author-link">НВлыов ЛОВОЛлывывлылодв</a></div>
+            <div class="article-prev">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque maxime est quae. Sapiente ducimus eum optio. Exercitationem nisi atque at odio excepturi, veritatis in, quis quia animi corrupti vero accusantium!
+            Numquam ut provident, commodi, aliquid vero aliquam expedita explicabo itaque necessitatibus velit omnis nesciunt recusandae. At eius id pariatur, tenetur in, corrupti nulla aperiam esse provident quidem, excepturi dolorem aut!</div>
+        </article>
+    </section>
+    <footer>
+        <script src="../../src/scripts/scpts.js"></script>
+            <p class="pfooter">
+                <a href="https://www.vk.com"><img alt="Вконтакте" src="../../src/images/logo-vk.svg"/></a>
+                <a href="https://www.facebook.com"><img alt="Facebook" src="../../src/images/logo-facebook.svg"/></a>
+                <a href="https://www.instagram.com"><img alt="Instagram" src="../../src/images/logo-instagram.svg"/></a><br/>
+                <a href="#">Info</a> &#183; <a href="#">Support</a><br/>
+                <a href="#">Terms of Use</a> &#183; <a href="#">Privacy Policy</a><br/>
+                <span style="font-style: italic;">&copy;2022 Timoshenko Dmitry</span>
+            </p>
+    </footer>
+</body>
+</html>

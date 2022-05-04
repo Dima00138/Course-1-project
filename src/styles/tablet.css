@@ -1,0 +1,41 @@
+.wrapper {
+  width: 80%;
+  left: calc(50% - 80%/2 - 1px);
+}
+
+.wrapper label {
+  left: 30%;
+}
+
+hr {
+  width: 80%;
+  left: calc(50% - 80%/2 - 1px);
+}
+
+header #plogo {
+  left: 25%;
+}
+
+section {
+  width: 80%;
+  left: calc(50% - 80%/2 - 1px);
+}
+
+section article {
+  width: 100%;
+  min-height: 800px;
+}
+
+section article .article-img {
+  height: 60%;
+}
+
+.article {
+  width: 85%;
+  left: calc(50% - 85%/2 - 1px);
+}
+
+.article figure {
+  width: 45%;
+}
+/*# sourceMappingURL=tablet.css.map */

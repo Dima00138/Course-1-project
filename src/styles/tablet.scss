@@ -1,0 +1,40 @@
+.wrapper {
+    width: 80%;
+    left: calc(50% - 80%/2 - 1px);
+
+    label {
+        left: 30%;
+    }
+}
+
+hr {
+    width: 80%;
+    left: calc(50% - 80%/2 - 1px);
+}
+
+header #plogo {
+    left: 25%;
+}
+
+section {
+    width: 80%;
+    left: calc(50% - 80%/2 - 1px);
+
+    article {
+        width: 100%;
+        min-height: 800px;
+
+        .article-img {
+            height: 60%;
+        }
+    }
+}
+
+.article {
+    width: 85%;
+    left: calc(50% - 85%/2 - 1px);
+    
+        figure {
+            width: 45%;
+        }
+}

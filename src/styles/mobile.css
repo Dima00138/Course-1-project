@@ -1,0 +1,46 @@
+.wrapper {
+  width: 100%;
+  left: 0;
+}
+
+.wrapper label {
+  left: 30%;
+}
+
+hr {
+  width: 100%;
+  left: 0;
+}
+
+header #plogo {
+  left: 28%;
+}
+
+section {
+  width: 100%;
+  left: 0;
+}
+
+section article {
+  width: 100%;
+}
+
+section .article-img {
+  height: 60%;
+}
+
+.big-img {
+  height: 90%;
+}
+
+.article {
+  width: 100%;
+  left: 0;
+}
+
+.article figure {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+/*# sourceMappingURL=mobile.css.map */

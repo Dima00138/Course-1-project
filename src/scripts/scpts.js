@@ -12,10 +12,8 @@ function listing() {
                 }
                 return false;
             }
-            //if ($(this).is("#slide5")) return false;
         })
 }
-
 $(document).ready(function() {
    let slider = setInterval(listing, 5000);
    $("label").click(function () { 
@@ -27,17 +25,14 @@ $(document).ready(function() {
 var twobombChain  = (function(){
     var drag = false;
     var values = [];
-    
-        
     $(".chain").each(function(i,e){
-        updateView(e);
+        updateView(e); 
     });
     $(".chain>.bar>.lp,.chain>.bar>.rp").bind("mousedown",function(){
-        drag = $(this);
+        drag = $(this); 
     })
     $(document).bind("mousemove",function(e){
-        if(!drag)
-          return;
+        if(!drag) return;
        var x = (e.pageX - $(drag).outerWidth()/2 - $(drag).parent().parent().offset().left)/$(drag).parent().parent().outerWidth();
        if(x < 0 ) x = 0;
        if(x > 1) x = 1;
@@ -58,15 +53,14 @@ var twobombChain  = (function(){
     function updateView(chain){
         let startVal = parseInt($(chain).find(".bar").data("start"));
         let endVal = parseInt($(chain).find(".bar").data("end"));
-      if(startVal > endVal)
-          endVal = startVal;
+      if(startVal > endVal) endVal = startVal;
         startVal = startVal || 0;
       endVal = endVal || 2190;
       let values = [];
       for(let i = startVal; i <= endVal;i++)
           values.push(new Date(1939, 8, i+1).toLocaleString().substring(0,10));
-        let l  =$(chain).find(".lp").attr("data-pos");
-        var r  =$(chain).find(".rp").attr("data-pos");
+      let l  =$(chain).find(".lp").attr("data-pos");
+      var r  =$(chain).find(".rp").attr("data-pos");
       let x = $(chain).outerWidth() * l;
       let w = (r - l)*$(chain).outerWidth();
       $(chain).find(".bar").css({left:x+"px",width:w+"px"});

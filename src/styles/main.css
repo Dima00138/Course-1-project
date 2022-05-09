@@ -54,13 +54,32 @@ header #menu-toggle {
 header nav {
   position: relative;
   float: right;
-  width: 50%;
+  width: 64%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-height: 70px;
   overflow: hidden;
 }
 
 header nav form {
-  float: left;
+  padding-top: 4px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 2 auto;
+          flex: 0 2 auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -75,7 +94,6 @@ header nav form input {
   width: 25px;
   height: 25px;
   font-size: 1rem;
-  margin-top: 23.33333px;
   background: none;
   border-radius: 50px;
   border: 3px solid #FF03B8;
@@ -101,10 +119,10 @@ header nav form .inclicked {
 }
 
 header nav form .btn {
-  margin-left: -23px;
+  margin-left: -25px;
   position: absolute;
-  width: 20px;
-  height: 38px;
+  width: 25px;
+  height: 31px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: none;
@@ -121,8 +139,8 @@ header nav form .btn::before {
   position: absolute;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  bottom: -16px;
-  right: -6px;
+  bottom: -1px;
+  right: -3px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -133,8 +151,8 @@ header nav form .close::before, header nav form .close::after {
   height: 12px;
   background: white;
   position: absolute;
-  bottom: -4px;
-  right: 8px;
+  bottom: 12px;
+  right: 10px;
 }
 
 header nav form .close::before {
@@ -157,9 +175,8 @@ header nav a {
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: bold;
-  float: left;
   padding-top: 26.25px;
-  margin-right: 36px;
+  margin-right: 50px;
   height: 70px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -348,9 +365,10 @@ header #plogo {
     float: none;
     text-align: center;
     font-size: 1.4rem;
+    margin: 0;
   }
   header nav a .inclicked, header nav form .inclicked {
-    margin-left: -35px;
+    margin-left: 0;
     margin-bottom: 0;
     margin-right: 0;
     width: 250px;
@@ -407,10 +425,24 @@ header #plogo {
   -o-transform: scale(1.5);
 }
 
-.wrapper controls {
-  left: 50%;
-  margin-left: -98px;
-  position: absolute;
+.wrapper .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .wrapper label {
@@ -420,7 +452,6 @@ header #plogo {
   position: relative;
   height: 8px;
   margin: 25px 12px 0 16px;
-  left: 39%;
   top: -60px;
   width: 8px;
   border-radius: 50%;
@@ -470,13 +501,13 @@ header #plogo {
 }
 
 .slide4 {
-  background-image: url("../images/article_alies-1.png");
+  background-image: url("../images/826cb33961f5cb6aeca7f62b89c8584e.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
 .slide5 {
-  background-image: url("../images/article_alies-2.jpeg");
+  background-image: url("../images/0004.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -504,6 +535,72 @@ hr {
 }
 
 /*------------Статья-С------------*/
+main {
+  position: relative;
+  margin-left: 5%;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+main .hero {
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 450px;
+  height: 650px;
+  text-align: center;
+}
+
+main .hero .description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.1rem;
+  position: relative;
+  margin-top: -550px;
+  z-index: -1;
+}
+
+main .hero .div-img {
+  width: 100%;
+  min-height: 550px;
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  transition: opacity 0.3s linear;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -ms-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+}
+
+main .hero .div-img:hover {
+  opacity: 0;
+}
+
 .crossed::after {
   width: 100%;
 }
@@ -530,7 +627,7 @@ hr {
   background-position: 50% 50%;
 }
 
-.big-img span {
+.big-img h1 {
   position: relative;
   text-align: center;
   font-size: 5rem;
@@ -553,12 +650,14 @@ hr {
 }
 
 .article p {
+  text-align: justify;
   margin-top: 5px;
   text-indent: 40px;
 }
 
 .article figure {
-  width: 30%;
+  width: 25%;
+  max-width: 400px;
   margin: 10px 5px 5px 10px;
   height: auto;
   float: right;
@@ -574,19 +673,19 @@ hr {
   font-size: 0.9rem;
 }
 
-.article h2 {
-  text-align: center;
-  font-family: "Oswald Regular", sans-serif;
-  margin-bottom: 20px;
-  font-size: 2rem;
-}
-
 .article h3 {
   text-indent: 40px;
   font-family: "Oswald Regular", sans-serif;
   margin-top: 20px;
   margin-bottom: 10px;
   font-size: 1.55rem;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Oswald Regular", sans-serif;
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
 /*-------------Статьи-Г-----------*/
@@ -625,6 +724,7 @@ section .article-main .article-main-heading {
   position: relative;
   padding-top: 400px;
   line-height: 1.5;
+  font-size: 1.7rem;
   letter-spacing: 3px;
   font-family: 'Kelly Slab', serif;
   color: #FFF;
@@ -638,6 +738,7 @@ section article {
   margin-top: 50px;
   width: 45%;
   min-height: 600px;
+  height: auto;
   overflow: hidden;
 }
 
@@ -669,8 +770,8 @@ section article .article-time {
 
 section article .article-heading {
   font-family: "Source Serif Pro";
-  font-size: 2rem;
-  padding-bottom: 5px;
+  font-size: 1.4rem;
+  padding-top: 5px;
   text-transform: uppercase;
 }
 
@@ -707,6 +808,7 @@ section article .article-prev {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  text-align: justify;
   font-family: "Source Serif Pro";
   font-size: 1.1rem;
 }
@@ -847,5 +949,76 @@ footer i {
 .chain .bar .rp {
   left: 100%;
   top: -6px;
+}
+
+/*-------------Форма---------------*/
+.forma {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: top;
+      -ms-flex-pack: top;
+          justify-content: top;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.archieve .big {
+  height: 65%;
+}
+
+.archieve form {
+  padding: 50px;
+  width: 80%;
+  max-width: 900px;
+  min-width: 500px;
+  height: auto;
+  background-color: black;
+  opacity: 0.7;
+  margin-top: 50px;
+  font-family: Tahoma;
+  border-radius: 10px;
+  color: white;
+  text-align: left;
+}
+
+.archieve label {
+  display: block;
+  width: 100%;
+}
+
+.archieve input, .archieve select, .archieve textarea {
+  padding: 0.8em;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  font-size: 1em;
+  margin-bottom: 30px;
+  margin-top: 4px;
+  font-family: Tahoma;
+}
+
+.archieve select {
+  width: 100%;
+}
+
+.archieve textarea {
+  resize: none;
+  height: 150px;
+}
+
+.archieve input[type="radio"], .archieve input[type="checkbox"] {
+  width: unset;
+  margin-bottom: 15px;
+}
+
+.archieve input[type="submit"] {
+  width: 100%;
+  background-color: skyblue;
+  font-size: 1.1em;
+  font-weight: 700;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=main.css.map */

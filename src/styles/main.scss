@@ -66,20 +66,27 @@ header {
 nav {
     position: relative;
     float: right;
-    width: 50%;
+    width: 64%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    padding-right: 50px;
+    align-items: center;
     min-height: $Nheight;
     overflow: hidden;
     form {
-        float: left;
+        padding-top: 4px;
+        flex: 0 2 auto;
         width: fit-content;
         height: fit-content;
     input {
+        
         padding-left: 10px;
         color: #FFF;
         width: 25px;
         height: 25px;
         font-size: 1rem;
-        margin-top: $Nheight / 2 - $Nheight / 6;
         background:none;
         border-radius:50px;
         border:3px solid #FF03B8;
@@ -102,10 +109,10 @@ nav {
         -o-border-radius:6px;
 }
       .btn{
-        margin-left: -23px;
+        margin-left: -25px;
         position:absolute;
-        width:20px;
-        height:38px;
+        width:25px;
+        height:31px;
         box-sizing:border-box;
         background:none;
         border:none;
@@ -119,8 +126,8 @@ nav {
             background:#FF03B8;
             position:absolute;
             transform:rotate(-45deg);
-            bottom:-16px;
-            right:-6px;
+            bottom:-1px;
+            right:-3px;
             transition:0.3s;
       }}
       
@@ -130,8 +137,8 @@ nav {
         height:12px;
         background:white;
         position:absolute;
-        bottom:-4px;
-        right:8px;
+        bottom:12px;
+        right:10px;
       }
       .close::before{
         transform:rotate(-45deg);
@@ -148,9 +155,8 @@ nav {
         text-decoration: none;
         font-size: 1.1rem;
         font-weight: bold;
-        float: left;
         padding-top: $Nheight / 2 - $Nheight / 8;
-        margin-right: 36px;
+        margin-right: 50px;
         height: $Nheight;
         box-sizing: border-box;
         line-height: 1.5;
@@ -314,9 +320,10 @@ img {
             float: none;
             text-align: center;
             font-size: 1.4rem;
+            margin: 0;
 
                 .inclicked {
-                    margin-left: -35px;
+                    margin-left: 0;
                     margin-bottom: 0;
                     margin-right: 0;
 
@@ -377,20 +384,22 @@ $IHeight: 650px;
         -o-transform: scale(1.5);
 }
 
-    controls {
-        left: 50%;
-        margin-left: -98px;
-        position: absolute;
+    .controls {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
     }
 
     label {
-        z-index: 1;
+            z-index: 1;
             cursor: pointer;
             display: inline-block;
             position: relative;
             height: 8px;
             margin: 25px 12px 0 16px;
-            left: 39%;
             top: -60px;
             width: 8px;
             -webkit-border-radius: 50%;
@@ -430,8 +439,8 @@ $IHeight: 650px;
 .slide1 { background-image: url("../images/neutral_background.jpg");background-repeat: no-repeat;  background-size: 100% 100%; }
     .slide2 { background-image: url("../images/neutrral-pic1.webp");background-repeat: no-repeat;  background-size: 100% 100%;}
     .slide3 { background-image: url("../images/Antonio_Salazar.jpg"); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%; background-color: rgba(0, 0, 0, .7);}
-    .slide4 { background-image: url("../images/article_alies-1.png"); background-repeat: no-repeat; background-size: 100% 100%;}
-    .slide5 { background-image: url("../images/article_alies-2.jpeg"); background-repeat: no-repeat; background-size: 100% 100%;}
+    .slide4 { background-image: url("../images/826cb33961f5cb6aeca7f62b89c8584e.jpg"); background-repeat: no-repeat; background-size: 100% 100%;}
+    .slide5 { background-image: url("../images/0004.jpg"); background-repeat: no-repeat; background-size: 100% 100%;}
 
 #slide1:checked ~ .slider > .slide1,
     #slide2:checked ~ .slider > .slide2,
@@ -462,6 +471,53 @@ hr {
 
 /*------------Статья-С------------*/
 
+main {
+    position: relative;
+    margin-left: 5%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+
+    .hero {
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 450px;
+        height: 650px;
+        text-align: center;
+
+        .description {
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.1rem;
+            position: relative;
+            margin-top: -550px;
+            z-index: -1;
+        }
+
+        .div-img {
+            width: 100%;
+            min-height: 550px;
+            opacity: 1;
+            @include bgi();
+            transition: opacity 0.3s linear;
+            -webkit-transition: opacity 0.3s linear;
+            -moz-transition: opacity 0.3s linear;
+            -ms-transition: opacity 0.3s linear;
+            -o-transition: opacity 0.3s linear;
+                
+            &:hover {
+                opacity: 0;
+            }
+        }
+    }
+}
+
 .crossed::after {
     width: 100%;
 }
@@ -476,7 +532,7 @@ hr {
     height: 100%;
     @include bgi();
     
-        span {
+        h1 {
             position: relative;
             text-align: center;
             font-size: 5rem;
@@ -501,12 +557,14 @@ hr {
     line-height: 1.5;
 
     p {
+        text-align: justify;
         margin-top: 5px;
         text-indent: 40px;
     }
 
     figure {
-        width: 30%;
+        width: 25%;
+        max-width: 400px;
         margin: 10px 5px 5px 10px;
         height:auto;
         float: right;
@@ -520,13 +578,6 @@ hr {
             font-size: 0.9rem;
         }
     }
-
-    h2 {
-        text-align: center;
-        font-family: "Oswald Regular", sans-serif;
-        margin-bottom: 20px;
-        font-size: 2rem;
-    }
     h3 {
         text-indent: 40px;
         font-family: "Oswald Regular", sans-serif;
@@ -534,6 +585,13 @@ hr {
         margin-bottom: 10px;
         font-size: 1.55rem;
     }
+}
+
+h2 {
+    text-align: center;
+        font-family: "Oswald Regular", sans-serif;
+        margin-bottom: 20px;
+        font-size: 2rem;
 }
 
 
@@ -561,6 +619,7 @@ section {
                 position: relative;
                 padding-top: 400px;
                 line-height: 1.5;
+                font-size: 1.7rem;
                 letter-spacing: 3px;
                 font-family: 'Kelly Slab', serif;
                 color: #FFF;
@@ -591,8 +650,9 @@ section {
             margin-top: 50px;
             width: 45%;
             min-height: 600px;
+            height: auto;
             overflow: hidden;
-
+            
             .article-img {
                 display: block;
                 opacity: 1;
@@ -604,12 +664,12 @@ section {
                 width: 100%;
                 height: 50%;
                 @include bgi();
-
+                
                 &:hover{
                     opacity: 0.8;
                 }
             }
-
+            
             .article-time {
                 font-family: 'IBM Plex Sans';
                 font-size: 0.9rem;
@@ -619,8 +679,8 @@ section {
             
             .article-heading {
                 font-family: "Source Serif Pro";
-                font-size: 2rem;
-                padding-bottom: 5px;
+                font-size: 1.4rem;
+                padding-top: 5px;
                 text-transform: uppercase;
                 
                 a {
@@ -652,12 +712,12 @@ section {
             .article-prev {
                 width: fit-content;
                 height: fit-content;
+                text-align: justify;
                 font-family: "Source Serif Pro";
                 font-size: 1.1rem;
             }
         }
 }
-
  /*--------------Футер------------*/
 
 footer {
@@ -704,7 +764,6 @@ footer {
 
 
 /*---------Полоса прокрутки--------*/
-
 
 * {
     &::-webkit-scrollbar {
@@ -784,3 +843,70 @@ footer {
         left:100%;
         top:-6px;
     }}}
+
+/*-------------Форма---------------*/
+
+ .forma {
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+ }
+    .archieve {
+        .big {
+            height: 65%;
+        }
+        form {
+            padding: 50px;
+            width: 80%;
+            max-width: 900px;
+            min-width: 500px;
+            height: auto;
+            background-color: black;
+            opacity: 0.7;
+            margin-top: 50px;
+            font-family: Tahoma;
+            border-radius: 10px;
+            color: white;
+            text-align: left;
+          }
+          
+          label {
+            display: block;
+            width: 100%;
+          }
+          
+          input, select, textarea {
+            padding: 0.8em;
+            border-radius: 6px;
+            border: none;
+            width: 100%;
+            font-size: 1em;
+            margin-bottom: 30px;
+            margin-top: 4px;
+            font-family: Tahoma;
+          }
+          
+          select {
+            width: 100%;
+          }
+          
+          textarea {
+            resize: none;
+            height: 150px;
+          }
+          
+          
+          input[type="radio"], input[type="checkbox"] {
+            width: unset;
+            margin-bottom: 15px;
+          }
+          
+          
+          input[type="submit"] {
+            width: 100%;
+            background-color: skyblue;
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-top: 20px;
+          }
+    }

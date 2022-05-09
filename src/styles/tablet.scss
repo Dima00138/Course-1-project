@@ -1,10 +1,8 @@
 .wrapper {
     width: 80%;
     left: calc(50% - 80%/2 - 1px);
+    height: 500px;
 
-    label {
-        left: 30%;
-    }
 }
 
 hr {
@@ -12,8 +10,14 @@ hr {
     left: calc(50% - 80%/2 - 1px);
 }
 
+header #logo {
+    left: 2.12%;
+    right: 91.97%;
+    min-width: 60px;
+}
+
 header #plogo {
-    left: 25%;
+    left: 12%;
 }
 
 section {

@@ -44,7 +44,6 @@ body {
     background-color: #FFF;
 }
 
-
 //---------------Меню сайта---------------- 
 
 $Nheight: 70px;
@@ -466,8 +465,7 @@ hr {
         
 
         border: 1px solid rgba(0, 0, 0, 0.25);
-    }
-
+}
 
 /*------------Статья-С------------*/
 
@@ -593,7 +591,6 @@ h2 {
         margin-bottom: 20px;
         font-size: 2rem;
 }
-
 
 /*-------------Статьи-Г-----------*/
 
@@ -762,25 +759,31 @@ footer {
     }
 }
 
-
 /*---------Полоса прокрутки--------*/
 
 * {
     &::-webkit-scrollbar {
-        width: 10px;
+        width: 7px;
       }
 
     &::-webkit-scrollbar-track {
         box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
         background-color: #f9f9fd;
-        border-radius: 10px;
-      }
+        border-radius: 7px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+}
 
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background: linear-gradient(180deg, #00c6fb, #005bea);
-      }}
-
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+}}
 
 /*--------------Архив--------------*/
 
@@ -811,13 +814,15 @@ footer {
 
         .lp span{
         color: #000;
+        font-size: 0.9rem;
         position:relative;
-        left:-30px;
+        left:-25px;
         width: fit-content;
         }
 
         .rp span{
         color: #000;
+        font-size: 0.9rem;
         position:relative;
         left:-35px;
         width: fit-content;
@@ -836,11 +841,11 @@ footer {
     }
   
     .lp{
-        left:0px;
+        left:-1px;
         top:-6px;
     }
     .rp{
-        left:100%;
+        left:99%;
         top:-6px;
     }}}
 
@@ -851,7 +856,7 @@ footer {
     justify-content: top;
     align-items: center;
  }
-    .archieve {
+.archieve {
         .big {
             height: 65%;
         }
@@ -859,7 +864,6 @@ footer {
             padding: 50px;
             width: 80%;
             max-width: 900px;
-            min-width: 500px;
             height: auto;
             background-color: black;
             opacity: 0.7;

@@ -1,2 +1,2 @@
-# Cours 1 project
+# Course 1 project
  Курсовой проект 1

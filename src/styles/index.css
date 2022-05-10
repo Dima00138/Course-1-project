@@ -13,7 +13,6 @@ body {
 }
 
 body, html {
-  overflow-y: hidden;
   height: 100%;
 }
 
@@ -28,8 +27,8 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -78,5 +77,15 @@ figcaption {
   text-align: center;
   color: whitesmoke;
   background-color: #001224;
+}
+
+@media screen and (max-width: 1024px) {
+  .f1 {
+    width: 100%;
+    min-height: 400px;
+  }
+  img {
+    height: 400px;
+  }
 }
 /*# sourceMappingURL=index.css.map */

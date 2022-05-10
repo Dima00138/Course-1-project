@@ -13,7 +13,6 @@ body {
 }
 
 body,html {
-    overflow-y: hidden;
     height: 100%;
 }
 
@@ -31,7 +30,7 @@ $marg2: 60px;
 
 main {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -77,4 +76,14 @@ figcaption {
     text-align: center;
     color: whitesmoke;
     background-color: #001224;
+}
+@media screen and (max-width:1024px) {
+    $height2: 400px;
+    .f1 {
+        width: 100%;
+        min-height: $height2;
+    }
+    img {
+        height: $height2;
+    }
 }

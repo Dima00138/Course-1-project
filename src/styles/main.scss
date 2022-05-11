@@ -7,15 +7,24 @@
 	box-sizing: border-box;
 }
 
-html {
-    height: 100%;
-    width: 100%;
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
 }
 
 @mixin bgi {
     background-repeat: no-repeat;
     background-size:cover;
     background-position: 50% 50%;
+}
+
+@mixin flex($direction, $wrap, $just-cont, $align-items, $align-content) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $just-cont;
+    align-items: $align-items;
+    align-content: $align-content;
 }
 
 @font-face {
@@ -36,6 +45,10 @@ html {
 @font-face {
     font-family: "Open Sans Regular";
     src: url('../fonts/OpenSans-VariableFont_wght.ttf');
+}
+
+html {
+    @include size(100%, 100%);
 }
 
 body {
@@ -66,25 +79,19 @@ nav {
     position: relative;
     float: right;
     width: 64%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
+    @include flex(row, nowrap, flex-end, center, normal);
     padding-right: 50px;
-    align-items: center;
     min-height: $Nheight;
     overflow: hidden;
     form {
         padding-top: 4px;
         flex: 0 2 auto;
-        width: fit-content;
-        height: fit-content;
+        @include size(fit-content, fit-content);
     input {
         
         padding-left: 10px;
         color: #FFF;
-        width: 25px;
-        height: 25px;
+        @include size(25px, 25px);
         font-size: 1rem;
         background:none;
         border-radius:50px;
@@ -110,9 +117,7 @@ nav {
       .btn{
         margin-left: -25px;
         position:absolute;
-        width:25px;
-        height:31px;
-        box-sizing:border-box;
+        @include size(25px, 31px);
         background:none;
         border:none;
         outline:none;
@@ -120,8 +125,7 @@ nav {
 
         &::before{
             content:"";
-            width:5px;
-            height:15px;
+            @include size(5px, 15px);
             background:#FF03B8;
             position:absolute;
             transform:rotate(-45deg);
@@ -132,8 +136,7 @@ nav {
       
       .close::before,.close::after{
         content:"";
-        width:2px;
-        height:12px;
+        @include size(2px, 12px);
         background:white;
         position:absolute;
         bottom:12px;
@@ -147,23 +150,20 @@ nav {
       }}
 
     a {
-        width: fit-content;
+        @include size(fit-content, fit-content);
         color: $Ncolor;
         font-family: "Source Serif Pro", sans-serif;
         text-transform: uppercase;
         text-decoration: none;
         font-size: 1.1rem;
         font-weight: bold;
-        padding-top: $Nheight / 2 - $Nheight / 8;
+        padding-top: $Nheight / 2 - $Nheight / 4;
         margin-right: 50px;
-        height: $Nheight;
-        box-sizing: border-box;
         line-height: 1.5;
 
         &:after {
             display: block;
-            width: 0;
-            height: 2px;
+            @include size(0, 2px);
             background-color: #00a650;
             content: "";
             transition: width .3s ease-out;
@@ -204,9 +204,8 @@ nav {
         left: -100%;
         top: 0px;
         position: absolute;
-        width: 100%;
-        height: 100%;
-        background-image: url("../images/logo.jpg");
+        @include size(100%, 100%);
+        background-image: url("../images/logo.svg");
         @include bgi();
         transform-origin: left center;
         transform: rotateX(90deg);
@@ -226,8 +225,7 @@ nav {
 }
 
 img {
-    width: 85px;
-    height: 85px;
+    @include size(85px, 85px);
 }
 }
 
@@ -238,7 +236,6 @@ img {
     right: 82%;
     top: 25%;
     width: fit-content;
-    //padding-top: 15px;
     color: $Ncolor;
     text-decoration: none;
     font-family: 'Kelly Slab';
@@ -269,13 +266,11 @@ img {
     }
 
     #label_menu {
-        display: flex;
-        align-items: center;
+        @include flex(row, nowrap, normal, center, normal);
         position: fixed;
         top: 25px;
         right: 25px;
-        width: 26px;
-        height: 26px;
+        @include size(26px, 26px);
         cursor: pointer;
         z-index: 1;
 }
@@ -284,8 +279,7 @@ img {
     #label_menu > span::after {
         display: block;
         position: absolute;
-        width: 100%;
-        height: 2px;
+        @include size(100%, 2px);
         background-color: $Ncolor;
         transition-duration: .25s;
     }
@@ -298,23 +292,22 @@ img {
         top: 8px;
     }
     header nav {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    @include flex(column, wrap, center, center, normal);
     position: fixed;
     visibility: hidden;
     top: 0;
     left: -100%;
-    width: 100%;
-    height: 100%;
+    @include size(100%, 100%);
     margin: 0;
     padding: 10px 0;
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
     transition-duration: .25s;
 
+        a::after {
+            height: 0;
+        }
+        
         a, form {
             float: none;
             text-align: center;
@@ -326,8 +319,7 @@ img {
                     margin-bottom: 0;
                     margin-right: 0;
 
-                    width: 250px;
-                    height: 40px;
+                    @include size(250px, 40px);
                 }
         }
         .btn{
@@ -344,8 +336,7 @@ $IHeight: 650px;
 .wrapper {
     z-index: 0;
     position: relative;
-    width: 60%;
-    height: $IHeight;
+    @include size(60%, $IHeight);
     left: calc(50% - 60%/2 - 1px);
     top: $Nheight;
 
@@ -354,10 +345,9 @@ $IHeight: 650px;
 
     .slider {
         background-color: #ddd;
-        height: inherit;
+        @include size(100%, inherit);
         overflow: hidden;
         position: relative;
-        width: 100%;
         -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
         -moz-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
         -o-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
@@ -367,10 +357,9 @@ $IHeight: 650px;
        display: none;
     }
     .slides {
-        height: inherit;
+        @include size(inherit, inherit);
         opacity: 0;
         position: absolute;
-        width: inherit;
         -webkit-transform: scale(1.5);
         transform: scale(1.5);
         z-index: 0;
@@ -384,12 +373,7 @@ $IHeight: 650px;
 }
 
     .controls {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
+        @include flex(row, nowrap, center, center, center);
     }
 
     label {
@@ -397,10 +381,9 @@ $IHeight: 650px;
             cursor: pointer;
             display: inline-block;
             position: relative;
-            height: 8px;
+            @include size(8px, 8px);
             margin: 25px 12px 0 16px;
             top: -60px;
-            width: 8px;
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
             -o-border-radius: 50%;
@@ -414,11 +397,10 @@ $IHeight: 650px;
             border: 2px solid #ddd;
             content: " ";
             display: block;
-            height: 12px;
+            @include size(12px, 12px);
             left: -4px;
             position: absolute;
             top: -4px;
-            width: 12px;
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
             -o-border-radius: 50%;
@@ -456,8 +438,7 @@ $IHeight: 650px;
 
 hr {
         position: relative;
-        width: 60%;
-        height: 2px;
+        @include size(60%, 2px);
         top: 95px;
         margin-top: 70px;
         margin-bottom: 130px;
@@ -473,25 +454,23 @@ main {
     position: relative;
     margin-left: 5%;
     width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
+    @include flex(row, wrap, space-around, center, normal);
     flex: 1 1 auto;
+    
+    h2 {
+        margin: 0;
+    }
 
     .hero {
         overflow: hidden;
         position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        width: 450px;
-        height: 650px;
+        @include flex(column, wrap, normal, normal, normal);
+        @include size(450px, 700px);
         text-align: center;
 
         .description {
             font-family: "Open Sans", sans-serif;
+            text-align: justify;
             font-size: 1.1rem;
             position: relative;
             margin-top: -550px;
@@ -522,12 +501,8 @@ main {
 
 .big-img {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    @include flex(column, nowrap, center, center, normal);
+    @include size(100%, 100%);
     @include bgi();
     
         h1 {
@@ -561,15 +536,13 @@ main {
     }
 
     figure {
-        width: 25%;
+        @include size(25%, auto);
         max-width: 400px;
         margin: 10px 5px 5px 10px;
-        height:auto;
         float: right;
         
         img {
-            width: 100%;
-            height: 95%;
+            @include size(100%, 95%);
         }
         figcaption {
             text-align: center;
@@ -600,13 +573,12 @@ section {
         width: 60%;
         min-height: 600px;
         left: calc(50% - 60%/2 - 1px);
-        display: flex;
+        @include flex(row, wrap, space-between, stretch, normal);
         word-break: break-all;
-        flex-flow:row wrap;
-        justify-content: space-between;
-        align-items: stretch;
 
         .article-main {
+            position: relative;
+            @include flex(column, nowrap, flex-end, center, center);
             width: 100%;
             min-height: 450px;
             @include bgi();
@@ -614,7 +586,7 @@ section {
 
             .article-main-heading {
                 position: relative;
-                padding-top: 400px;
+                
                 line-height: 1.5;
                 font-size: 1.7rem;
                 letter-spacing: 3px;
@@ -658,8 +630,7 @@ section {
                 -moz-transition: opacity .6s;
                 -ms-transition: opacity .6s;
                 -o-transition: opacity .6s;
-                width: 100%;
-                height: 50%;
+                @include size(100%, 50%);
                 @include bgi();
                 
                 &:hover{
@@ -707,8 +678,7 @@ section {
             }
 
             .article-prev {
-                width: fit-content;
-                height: fit-content;
+                @include size(fit-content, fit-content);
                 text-align: justify;
                 font-family: "Source Serif Pro";
                 font-size: 1.1rem;
@@ -740,7 +710,6 @@ footer {
         width: fit-content;
         color: #ffe;
         font-style: italic;
-        box-sizing: border-box;
         border-radius: 0;
         text-decoration: none;
         line-height: 1;
@@ -750,8 +719,7 @@ footer {
     }
     
     .pfooter img {
-        width: 32px;
-        height: 32px;
+        @include size(32px, 32px);
     }
     
     i {
@@ -798,19 +766,18 @@ footer {
 /*----------Цепь событий----------*/
 
 .chain{
-    width:60%;
-    height:5px;
+    @include size(60%, 5px);
     background:#f00;
     position:relative;
     top: 50px;
     left: calc(50% - 60%/2 - 1px);
+    touch-action: none;
 
     .bar{
     position:absolute;
     left:50px;
-    width:300px;
+    @include size(300px, 100%);
     background:#0f0;
-    height:100%;
 
         .lp span{
         color: #000;
@@ -830,8 +797,7 @@ footer {
         .lp, .rp{
         cursor:pointer;
         background:#0f0;
-        width:16px;
-        height:16px;
+        @include size(16px, 16px);
         border:3px solid #0f0;
         border-radius:100%;
         position:absolute;
@@ -852,9 +818,7 @@ footer {
 /*-------------Форма---------------*/
 
  .forma {
-    flex-direction: column;
-    justify-content: top;
-    align-items: center;
+     @include flex(column, nowrap, top, center, normal);
  }
 .archieve {
         .big {
@@ -862,9 +826,8 @@ footer {
         }
         form {
             padding: 50px;
-            width: 80%;
+            @include size(80%, auto);
             max-width: 900px;
-            height: auto;
             background-color: black;
             opacity: 0.7;
             margin-top: 50px;

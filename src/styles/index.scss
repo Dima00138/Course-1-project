@@ -12,7 +12,7 @@ body {
     src: url('../fonts/KellySlab-Regular.ttf');
 }
 
-body,html {
+html {
     height: 100%;
 }
 
@@ -24,7 +24,7 @@ h1 {
 }
 
 $count: 3;
-$height1: 600px;
+$height1: 550px;
 $marg1: 35%;
 $marg2: 60px;
 
@@ -37,8 +37,9 @@ main {
 
 .f1 {
     position: relative;
+    min-width: 300px;
     width: 60% / $count;
-    min-height: $height1;
+    height: $height1;
     overflow: hidden;
     border: white solid 4px;
     border-radius: 15px;
@@ -66,7 +67,7 @@ main {
 img {
     margin: 0;
     width: 100%;
-    height: $height1;
+    height: 490px;
 }
 
 figcaption {
@@ -76,14 +77,4 @@ figcaption {
     text-align: center;
     color: whitesmoke;
     background-color: #001224;
-}
-@media screen and (max-width:1024px) {
-    $height2: 400px;
-    .f1 {
-        width: 100%;
-        min-height: $height2;
-    }
-    img {
-        height: $height2;
-    }
 }

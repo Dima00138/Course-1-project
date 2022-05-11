@@ -7,11 +7,6 @@
   box-sizing: border-box;
 }
 
-html {
-  height: 100%;
-  width: 100%;
-}
-
 @font-face {
   font-family: "Oswald Regular";
   src: url("../fonts/Oswald-VariableFont_wght.ttf");
@@ -30,6 +25,11 @@ html {
 @font-face {
   font-family: "Open Sans Regular";
   src: url("../fonts/OpenSans-VariableFont_wght.ttf");
+}
+
+html {
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -67,10 +67,12 @@ header nav {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding-right: 50px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-line-pack: normal;
+      align-content: normal;
+  padding-right: 50px;
   min-height: 70px;
   overflow: hidden;
 }
@@ -123,8 +125,6 @@ header nav form .btn {
   position: absolute;
   width: 25px;
   height: 31px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   background: none;
   border: none;
   outline: none;
@@ -169,17 +169,17 @@ header nav a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   color: #08D304;
   font-family: "Source Serif Pro", sans-serif;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: bold;
-  padding-top: 26.25px;
+  padding-top: 17.5px;
   margin-right: 50px;
-  height: 70px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   line-height: 1.5;
 }
 
@@ -233,7 +233,7 @@ header #logo:after {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url("../images/logo.jpg");
+  background-image: url("../images/logo.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -301,9 +301,20 @@ header #plogo {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: normal;
+        -ms-flex-pack: normal;
+            justify-content: normal;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -ms-flex-line-pack: normal;
+        align-content: normal;
     position: fixed;
     top: 25px;
     right: 25px;
@@ -341,12 +352,14 @@ header #plogo {
             flex-direction: column;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: normal;
+        align-content: normal;
     position: fixed;
     visibility: hidden;
     top: 0;
@@ -360,6 +373,9 @@ header #plogo {
             box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
     -webkit-transition-duration: .25s;
             transition-duration: .25s;
+  }
+  header nav a::after {
+    height: 0;
   }
   header nav a, header nav form {
     float: none;
@@ -394,10 +410,10 @@ header #plogo {
 
 .wrapper .slider {
   background-color: #ddd;
+  width: 100%;
   height: inherit;
   overflow: hidden;
   position: relative;
-  width: 100%;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -408,10 +424,10 @@ header #plogo {
 }
 
 .wrapper .slides {
+  width: inherit;
   height: inherit;
   opacity: 0;
   position: absolute;
-  width: inherit;
   -webkit-transform: scale(1.5);
   transform: scale(1.5);
   z-index: 0;
@@ -435,14 +451,14 @@ header #plogo {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  -ms-flex-line-pack: center;
-      align-content: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .wrapper label {
@@ -450,10 +466,10 @@ header #plogo {
   cursor: pointer;
   display: inline-block;
   position: relative;
+  width: 8px;
   height: 8px;
   margin: 25px 12px 0 16px;
   top: -60px;
-  width: 8px;
   border-radius: 50%;
   -webkit-transition: background ease-in-out .5s;
   transition: background ease-in-out .5s;
@@ -463,11 +479,11 @@ header #plogo {
   border: 2px solid #ddd;
   content: " ";
   display: block;
+  width: 12px;
   height: 12px;
   left: -4px;
   position: absolute;
   top: -4px;
-  width: 12px;
   border-radius: 50%;
 }
 
@@ -542,20 +558,26 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: normal;
+      align-content: normal;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+}
+
+main h2 {
+  margin: 0;
 }
 
 main .hero {
@@ -564,19 +586,28 @@ main .hero {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -ms-flex-line-pack: normal;
+      align-content: normal;
   width: 450px;
-  height: 650px;
+  height: 700px;
   text-align: center;
 }
 
 main .hero .description {
   font-family: "Open Sans", sans-serif;
+  text-align: justify;
   font-size: 1.1rem;
   position: relative;
   margin-top: -550px;
@@ -614,12 +645,16 @@ main .hero .div-img:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-line-pack: normal;
+      align-content: normal;
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -657,9 +692,9 @@ main .hero .div-img:hover {
 
 .article figure {
   width: 25%;
+  height: auto;
   max-width: 400px;
   margin: 10px 5px 5px 10px;
-  height: auto;
   float: right;
 }
 
@@ -698,20 +733,42 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  word-break: break-all;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  -ms-flex-line-pack: normal;
+      align-content: normal;
+  word-break: break-all;
 }
 
 section .article-main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   width: 100%;
   min-height: 450px;
   background-repeat: no-repeat;
@@ -722,7 +779,6 @@ section .article-main {
 
 section .article-main .article-main-heading {
   position: relative;
-  padding-top: 400px;
   line-height: 1.5;
   font-size: 1.7rem;
   letter-spacing: 3px;
@@ -842,8 +898,6 @@ footer .pfooter a, footer .pfooter a:hover, footer .pfooter a:active {
   width: fit-content;
   color: #ffe;
   font-style: italic;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border-radius: 0;
   text-decoration: none;
   line-height: 1;
@@ -905,14 +959,16 @@ footer i {
   position: relative;
   top: 50px;
   left: calc(50% - 60%/2 - 1px);
+  -ms-touch-action: none;
+      touch-action: none;
 }
 
 .chain .bar {
   position: absolute;
   left: 50px;
   width: 300px;
-  background: #0f0;
   height: 100%;
+  background: #0f0;
 }
 
 .chain .bar .lp span {
@@ -963,16 +1019,23 @@ footer i {
 
 /*-------------Форма---------------*/
 .forma {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-pack: top;
       -ms-flex-pack: top;
           justify-content: top;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-line-pack: normal;
+      align-content: normal;
 }
 
 .archieve .big {
@@ -982,8 +1045,8 @@ footer i {
 .archieve form {
   padding: 50px;
   width: 80%;
-  max-width: 900px;
   height: auto;
+  max-width: 900px;
   background-color: black;
   opacity: 0.7;
   margin-top: 50px;

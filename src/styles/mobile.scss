@@ -21,10 +21,11 @@ header #plogo {
 
 section {
     width: 100%;
+    justify-content: center;
     left: 0;
 
     article {
-        width: 100%;
+        width: 95%;
     }
 
     .article-img {
@@ -37,18 +38,33 @@ section {
 }
 
 .article {
-    width: 100%;
-    left: 0;
+    width: 95%;
+    left: calc(50% - 95%/2 - 1px);
+
+    ul {
+        margin-left: 30px;
+    }
+
+    h3 {
+        text-indent: 20px;
+        text-align: center;
+    }
 
     p {
-        padding-left: 5px;
-        padding-right: 5px;
+        text-indent: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     figure {
             width: 100%;
             margin-left: 0;
             margin-right: 0;
+            margin-bottom: 10px;
         }
 
+}
+
+.archieve form {
+    padding: 20px;
 }

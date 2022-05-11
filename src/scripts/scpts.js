@@ -28,10 +28,10 @@ var twobombChain  = (function(){
     $(".chain").each(function(i,e){
         updateView(e); 
     });
-    $(".chain>.bar>.lp,.chain>.bar>.rp").bind("mousedown",function(){
+    $(".chain>.bar>.lp,.chain>.bar>.rp").bind("pointerdown",function(){
         drag = $(this); 
     })
-    $(document).bind("mousemove",function(e){
+    $(document).bind("mousemove", "pointermove",function(e){
         if(!drag) return;
        var x = (e.pageX - $(drag).outerWidth()/2 - $(drag).parent().parent().offset().left)/$(drag).parent().parent().outerWidth();
        if(x < 0 ) x = 0;
@@ -47,7 +47,7 @@ var twobombChain  = (function(){
        $(drag).attr("data-pos",x);
        updateView($(drag).parent().parent());
     });
-    $(document).bind("mouseup",function(){
+    $(document).bind("pointerleft mouseup",function(){
         drag = false;
     });
     function updateView(chain){
@@ -55,7 +55,7 @@ var twobombChain  = (function(){
         let endVal = parseInt($(chain).find(".bar").data("end"));
       if(startVal > endVal) endVal = startVal;
         startVal = startVal || 0;
-      endVal = endVal || 2190;
+      endVal = endVal || 2193;
       let values = [];
       for(let i = startVal; i <= endVal;i++)
           values.push(new Date(1939, 8, i+1).toLocaleString().substring(0,10));

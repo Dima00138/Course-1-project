@@ -1,44 +1,28 @@
 .wrapper {
     width: 80%;
     left: calc(50% - 80%/2 - 1px);
-    height: 500px;
-
-}
-
+    height: 500px;}
 hr {
     width: 80%;
-    left: calc(50% - 80%/2 - 1px);
-}
-
+    left: calc(50% - 80%/2 - 1px);}
 header #logo {
     left: 2.12%;
     right: 91.97%;
-    min-width: 60px;
-}
-
+    min-width: 60px;}
 header #plogo {
-    left: 12%;
-}
-
+    left: 12%;}
 section {
     width: 80%;
     left: calc(50% - 80%/2 - 1px);
-
     article {
         width: 100%;
         min-height: 800px;
-
         .article-img {
             height: 60%;
-        }
-    }
-}
-
+}}}
 .article {
     width: 85%;
-    left: calc(50% - 85%/2 - 1px);
-    
+    left: calc(50% - 85%/2 - 1px); 
         figure {
             width: 45%;
-        }
-}
+}}

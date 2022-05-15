@@ -55,6 +55,7 @@ header nav {
   position: relative;
   float: right;
   width: 64%;
+  height: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,7 +74,6 @@ header nav {
   -ms-flex-line-pack: normal;
       align-content: normal;
   padding-right: 50px;
-  min-height: 70px;
   overflow: hidden;
 }
 
@@ -102,8 +102,8 @@ header nav form input {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   outline: none;
-  -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
-  transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out;
+  transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out;
   -webkit-transition-delay: 0.4s;
           transition-delay: 0.4s;
 }
@@ -137,10 +137,12 @@ header nav form .btn::before {
   height: 15px;
   background: #FF03B8;
   position: absolute;
+  top: auto;
+  right: -3px;
+  bottom: -1px;
+  left: auto;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  bottom: -1px;
-  right: -3px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -204,10 +206,10 @@ header #logo {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   position: absolute;
-  left: 8.12%;
+  top: 0;
   right: 85.97%;
-  top: 0%;
   bottom: -26.87%;
+  left: 8.12%;
   background: #FF0000;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -228,9 +230,11 @@ header #logo {
 
 header #logo:after {
   content: ' ';
-  left: -100%;
-  top: 0px;
   position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: -100%;
   width: 100%;
   height: 100%;
   background-image: url("../images/logo.svg");
@@ -263,10 +267,11 @@ header #logo img {
 
 header #plogo {
   position: absolute;
-  float: left;
-  left: 18%;
-  right: 82%;
   top: 25%;
+  right: 82%;
+  bottom: auto;
+  left: 18%;
+  float: left;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -318,6 +323,8 @@ header #plogo {
     position: fixed;
     top: 25px;
     right: 25px;
+    bottom: auto;
+    left: auto;
     width: 26px;
     height: 26px;
     cursor: pointer;
@@ -361,9 +368,11 @@ header #plogo {
     -ms-flex-line-pack: normal;
         align-content: normal;
     position: fixed;
-    visibility: hidden;
     top: 0;
+    right: auto;
+    bottom: auto;
     left: -100%;
+    visibility: hidden;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -399,10 +408,12 @@ header #plogo {
 .wrapper {
   z-index: 0;
   position: relative;
+  top: 70px;
+  right: auto;
+  bottom: auto;
+  left: calc(50% - 60%/2 - 1px);
   width: 60%;
   height: 650px;
-  left: calc(50% - 60%/2 - 1px);
-  top: 70px;
   background: #FFEEEE;
   -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -466,10 +477,13 @@ header #plogo {
   cursor: pointer;
   display: inline-block;
   position: relative;
+  top: -60px;
+  right: auto;
+  bottom: auto;
+  left: auto;
   width: 8px;
   height: 8px;
   margin: 25px 12px 0 16px;
-  top: -60px;
   border-radius: 50%;
   -webkit-transition: background ease-in-out .5s;
   transition: background ease-in-out .5s;
@@ -481,9 +495,11 @@ header #plogo {
   display: block;
   width: 12px;
   height: 12px;
-  left: -4px;
   position: absolute;
   top: -4px;
+  right: auto;
+  bottom: auto;
+  left: -4px;
   border-radius: 50%;
 }
 
@@ -541,12 +557,14 @@ header #plogo {
 
 hr {
   position: relative;
+  top: 95px;
+  right: auto;
+  bottom: auto;
+  left: calc(50% - 60%/2 - 1px);
   width: 60%;
   height: 2px;
-  top: 95px;
   margin-top: 70px;
   margin-bottom: 130px;
-  left: calc(50% - 60%/2 - 1px);
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
@@ -616,7 +634,7 @@ main .hero .description {
 
 main .hero .div-img {
   width: 100%;
-  min-height: 550px;
+  height: 550px;
   opacity: 1;
   background-repeat: no-repeat;
   background-size: cover;
@@ -673,6 +691,9 @@ main .hero .div-img:hover {
 
 .article {
   position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
   left: calc(50% - 70%/2 - 1px);
   width: 70%;
   min-height: 100px;
@@ -720,16 +741,19 @@ h2 {
   text-align: center;
   font-family: "Oswald Regular", sans-serif;
   margin-bottom: 20px;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 /*-------------Статьи-Г-----------*/
 section {
   z-index: 0;
   position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: calc(50% - 60%/2 - 1px);
   width: 60%;
   min-height: 600px;
-  left: calc(50% - 60%/2 - 1px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -875,7 +899,7 @@ footer {
   position: relative;
   margin-top: 60px;
   width: 100%;
-  min-height: 200px;
+  height: 200px;
   background-color: #060623;
   color: #ffe;
   text-align: center;
@@ -890,12 +914,12 @@ footer .pfooter a, footer .pfooter a:hover, footer .pfooter a:active {
   display: inline-block;
   z-index: 0;
   float: none;
-  min-height: -webkit-fit-content;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   color: #ffe;
   font-style: italic;
   border-radius: 0;
@@ -958,6 +982,8 @@ footer i {
   background: #f00;
   position: relative;
   top: 50px;
+  right: auto;
+  bottom: auto;
   left: calc(50% - 60%/2 - 1px);
   -ms-touch-action: none;
       touch-action: none;
@@ -965,6 +991,9 @@ footer i {
 
 .chain .bar {
   position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
   left: 50px;
   width: 300px;
   height: 100%;
@@ -975,6 +1004,9 @@ footer i {
   color: #000;
   font-size: 0.9rem;
   position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
   left: -25px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -985,7 +1017,10 @@ footer i {
   color: #000;
   font-size: 0.9rem;
   position: relative;
-  left: -35px;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: -25px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -998,7 +1033,6 @@ footer i {
   height: 16px;
   border: 3px solid #0f0;
   border-radius: 100%;
-  position: absolute;
   line-height: 400%;
   color: white;
   -webkit-user-select: none;
@@ -1008,13 +1042,19 @@ footer i {
 }
 
 .chain .bar .lp {
-  left: -1px;
+  position: absolute;
   top: -6px;
+  right: auto;
+  bottom: auto;
+  left: -1px;
 }
 
 .chain .bar .rp {
-  left: 99%;
+  position: absolute;
   top: -6px;
+  right: auto;
+  bottom: auto;
+  left: 99%;
 }
 
 /*-------------Форма---------------*/
